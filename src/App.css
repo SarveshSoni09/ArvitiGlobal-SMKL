@@ -1,38 +1,429 @@
 .App {
+  height: 100vh;
+}
+:root {
+  --red: #E31E24;
+  --white: #fff;
+  --green: #455A64;
+  --lightBlue: #F6F9FF;
+  --darkBlue: #393185;
+  --blue: #BAE1FF;
+  --yellow: #FFFFBA;
+  --avsaan: #FF7A57;
+}
+
+.avsaan {
+  color: var(--avsaan);
+}
+
+.semibold{
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  background-color: var(--lightBlue);
+  height: 100vh;
+}
+
+.MainApp {
+  display: grid;
+  grid-template-columns: 16.7% auto;
+}
+
+/* Sidebar CSS */
+
+.Sidebar {
+    width: 100%;
+    background-color: var(--white);
+    font-weight: 400;
+    border-radius: 0 24px 24px 0;
+    height: 100vh;
+    font-size: 14px;
+}
+.Sidebar .Logo {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.Sidebar .Logo #AppVersion{
+  font-size: 14px;
+  font-weight: normal;
+}
+.SideNav {
+  margin: 12px 24px;
+  border-top: 2px solid #E8F1FF;
+}
+.SideNav h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 4px 0;
+  color: #455A64;
+}
+.SideNav .SideNavLink {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: left;
+  grid-gap: 8px;
+  color: #455A64;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 4px 0 4px 12px;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+.SideNav .SideNavLink:hover{
+  color: var(--darkBlue);
+  background-color: var(--blue);
+  cursor: pointer;
+}
+.SideNav .OtherLink {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: left;
+  grid-gap: 8px;
+  color: #455A64;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 4px 4px;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+.SideNav .OtherLink:hover{
+  color: var(--darkBlue);
+  background-color: var(--blue);
+}
+.Sidebar img{
+  margin: 24px auto;
+  display: block;
+  width: 37.5%;
+}
+
+
+/* MainContent CSS */
+.HomePage, .EventPage, .FamilyPage{
+  display: grid;
+  grid-template-columns: 71.5% auto;
+}
+.HomeMain, .EventMain, .FamilyMain{
+  padding: 24px;
+}
+.HomeMain h3, .EventMain h3, .FamilyMain h3, .NewsMain h3{
+  margin: 0;
+  font-size: 18px;
+  color: var(--darkBlue);
+}
+/* Cards on Main CSS */
+
+.Card{
+  display: grid;
+  grid-template-columns: 20% auto;
+  margin-bottom: 8px;
+  background-color: var(--white);
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 8px;
+}
+.CardImg img{
+  height: 100%;
+  width: 100%;
+}
+.CardContent{
+  padding: 8px;
+}
+.HomeMain .CardTitle, .EventMain .CardTitle{
+  color: var(--avsaan);
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+.CardDesc .CardSubject{
+  font-size: 20px;
+  font-weight: 600;
+}
+.SubjectDescElement{
+  padding-right: 24px;
+  font-size: 14px;
+}
+.CardDesc .DescContent {
+  margin-top: 4px;
+  font-size: 14px;
+}
+.CardDesc a{
+  color: black;
+  /* text-decoration: none; */
+  cursor: pointer;
+  font-size: 14px;
+}
+.FamilyGrid{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+.FamilyGridItem{
+  border-radius: 16px;
+  background-color: var(--white);
+  padding: 8px;
+  box-shadow: 0 3px 6px #00000029;
+}
+.FamCardHeader{
+  display: flex;
+  justify-content: space-between;
+  color: var(--darkBlue);
+  font-weight: 600;
+}
+.FamMemberList{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.FamMemberList p{
+  margin: 0;
+}
+.FamCardContent .FCCItem, .FamMemContent .FCCItem{
+  border-bottom: 1px solid #455a6458; 
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: left;
+  margin-bottom: 4px;
+}
+/* .FamCardContent .FCCItem:last-child, .FamMemContent .FCCItem:last-child{
+  border-bottom: 0;
+} */
+.FCCItem .FCCItemKey{
+  color: #455a64ac;
+}
+.FCCItem .FCCItemVal{
+  padding-left: 8px;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.FamMemContent {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: left;
+  column-gap: 16px;
+}
+.FamMemContent .MemImg{
+  height:100%;
+  width: 140px;
+  border-radius: 8px;
+}
+.FamMemContent .MemImg img{
+  height: auto;
+  width: 100%;
+}
+.FamMemContent .MemDetails{
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Right Sidebar CSS */
+.HomeSBR , .EventSBR{
+    background-color: var(--blue);
+    padding: 0 16px;
+    border-radius: 24px 0 0 24px;
+    height: 100%;
+}
+.ScardContent:root {
+  padding: 0;
+}
+.HomeSBRContent .SCardTitle, .EventSBRContent .SCardTitle {
+  margin: 0;
+  font-size: 16px;
+}
+.HomeSBRContent .SCardDesc, .EventSBRContent .SCardDesc{
+  font-size: 12px;
+}
+.SidebarFooter{
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  font-size: 14px;
+  padding: 16px ;
+}
+.SidebarFooter .SideFootLinks a{
+  color: black;
+  text-decoration: none;
+}
+.SearchBar {
   display: flex;
-  flex-direction: column;
+  background-color: #FFF;
+  margin: 24px 0;
+  border-radius: 4px;
+}
+#SearchText {
+  flex: 80%;
+  display: grid;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 16px;
+}
+#SearchText input{
+  border: none;
+  height: 32px;
+  font-size: 18px;
+}
+#SearchText input:focus {
+  outline: none;
+}
+#SearchIcon {
+  display: grid;
+  padding: 0 8px;
+  place-items: center;
+  background-color: var(--darkBlue);
+  color: #FFF;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* MediaQueries for Mobile View */
+@media screen and (max-width: 767px){
+  .Sidebar {
+    display: none;
+    visibility: hidden;
+  }
+  .HomeSBR, .EventSBR{
+    display: none;
+    visibility: hidden;
+  }
+  .HomePage, .EventPage, .FamilyPage, .FamilyGrid, .NewsPage{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .HomeMain, .EventMain, .FamilyMain, .NewsMain{
+    padding: 12px;
+  }
+  .MainApp {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .MobileSideNav{
+    width: 70% ;
+    background-color:var(--white);
+    float: right;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+  }
+  .Logo {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .Logo #AppVersion{
+    font-size: 14px;
+    font-weight: normal;
+  }
+  #NewsF{
+    visibility: hidden;
+    display: none;
+  }
+  .FamMemberList{
+    grid-template-columns: 1fr 1fr;
+  }
+  .FamMemContent .MemImg img{
+    height: auto;
+    width: 100%;
+  }
+  .FamilyGridItem{
+    border-radius: 8px;
+  }
+  .Card{
+    grid-template-columns: 20% auto;
+  }
+  .CardImg img{
+    height: 80px;
+    width: 100%;
+    margin: 4px;
+  }
+  .Card .CardTitle{
+    font-size: 14px;
+    margin: 0;
+    color: var(--avsaan);
+    font-weight: 400;
+  }
+  .Card .CardSubject{
+    font-size: 16px;
+  }
+  .SubjectDescElement, .CardDesc .DescContent, .CardDesc a{
+    font-size: 12px;
+  }
+  .MobileSearchPage{
+    height: 100vh;
+    padding: 16px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 768px){
+  .MNavigator{
+    display: none;
+    visibility: hidden;
   }
-  to {
-    transform: rotate(360deg);
+  .Menu{
+    display: none;
+    visibility: hidden;
   }
+  #Home{
+    visibility: hidden;
+    display: none;
+  }
+  .MobileHome{
+    display: none;
+    visibility: hidden;
+  }
+  #MSideNav{
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.MNavigator{
+  position: sticky;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Menu{
+  text-align: right;
+  color: var(--darkBlue);
+  cursor: pointer;
+}
+
+.MainHeader{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#MSideNav{
+  visibility: hidden;
+}
+.MobileHomeGrid{
+  display: grid;
+  grid-template-columns: auto auto;
+  color: var(--darkBlue);
+}
+.MobileForms{
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+}
+.MobileForms .FormLink{
+  flex: 0 0 auto;
+  padding: 8px;
+  margin-right: 4px;
+  background-color: var(--yellow);
+  text-align: center;
+  border-radius: 4px;
+  width: 20%;
+}
+.MobileForms .FormLink p{
+  margin: 0;
 }
